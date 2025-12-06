@@ -1,0 +1,48 @@
+Estado del árbol de trabajo:
+git status
+
+Actualizar repositorio:
+git pull
+
+Crear rama nueva:
+git checkout -b nombreDeLaRama
+
+cambiar entre ramas:
+git checkout nombreDeLaRama
+
+Agregar archivos para confirmar:
+git add .
+
+Confirmar cambios:
+git commit -m "Descripción de los cambios"
+
+Subir cambios con rama nueva
+git push --set-upstream origin nombreDeLaRama
+
+Subir cambios a rama que ya existe:
+git push
+
+Ver las ramas locales:
+git branch
+
+Eliminar una rama local:
+git branch -D nombreDeLaRama
+
+Cuando se va a empezar a trabajar en algo el orden de los comandos es:
+git checkout -b nombreDeLaRama
+// haces todo tu trabajo y luego
+git add .
+// aquí agregaste tus archivos para confirmar, revisas con
+git status
+// Ahora si confirmas tus cambios
+git commit -m "Descripción de los cambios"
+// ya que está todo listo subes la rama, si es nueva entonces haces set upstream
+git push --set-upstream origin nombreDeLaRama
+// si ya está subida la rama entonces haces push normal
+git push
+// para crear el pull request haces
+gh pr create
+// acá sigues las instrucciones y te da el enlace directo al pull request
+// ya que se haga merge del pull request puedes regresar a la rama principal  y borrar la que creaste
+git branch -D nombreDeLaRama
+// si da error es porque debes estar en una rama diferente, no puedes borrar ramas en las  que estás parado porque te caes
