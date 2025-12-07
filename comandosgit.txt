@@ -13,6 +13,12 @@ git checkout nombreDeLaRama
 Agregar archivos para confirmar:
 git add .
 
+Quitar archivos para confirmar
+git reset .
+O si solo quieres quitar un archivo específico
+git reset nombreDelArchivo.txt
+O la extensión que tenga
+
 Confirmar cambios:
 git commit -m "Descripción de los cambios"
 
@@ -31,6 +37,8 @@ git branch -D nombreDeLaRama
 Cuando se va a empezar a trabajar en algo el orden de los comandos es:
 git checkout -b nombreDeLaRama
 // haces todo tu trabajo y luego
+git status
+// acá ves lo que cambiaste o agregaste o quitaste, lo agregas para confirmar
 git add .
 // aquí agregaste tus archivos para confirmar, revisas con
 git status
@@ -44,5 +52,7 @@ git push
 gh pr create
 // acá sigues las instrucciones y te da el enlace directo al pull request
 // ya que se haga merge del pull request puedes regresar a la rama principal  y borrar la que creaste
+git checkout main
+git pull
 git branch -D nombreDeLaRama
 // si da error es porque debes estar en una rama diferente, no puedes borrar ramas en las  que estás parado porque te caes
