@@ -4,6 +4,9 @@ git status
 Actualizar repositorio:
 git pull
 
+Guardar todo el historial de cambios en un archivo
+git log > log.txt
+
 Crear rama nueva:
 git checkout -b nombreDeLaRama
 
