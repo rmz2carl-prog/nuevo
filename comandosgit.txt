@@ -59,3 +59,25 @@ git checkout main
 git pull
 git branch -D nombreDeLaRama
 // si da error es porque debes estar en una rama diferente, no puedes borrar ramas en las  que estás parado porque te caes
+
+Si tu pull request tiene conflictos, primero te cambias a tu rama con los conflictos si no estás en ella, y ya en la rama haces:
+git rebase origin/main
+te dirá que estás en un rebase interactivo, y los archivos con conflictos, revisas con:
+git status
+entonces modificas los archivos con conflictos para resolverlos
+desde <<< HEAD hasta ==== es el código que está en main, y del === hasta >>> es lo que tu cambiaste
+decides cual es el código bueno y solo dejas ese
+asegurate de eliminar los <<< HEAD, los === y los >>>> junto con los números y letras que tiene como al azar
+ya que corregiste el archivo entonces haces:
+git add .
+revisas que todo esté verde:
+git status
+y le dices que continue:
+git rebase --continue
+si hay más conflictos te volverá a decir
+de nuevo corriges ese código, agregas con add . y continuas con --continue hasta que te diga success
+revisas por última vez que todo esté limpio:
+git status
+y subes la corrección de los conflictos con:
+git push -f
+los cambios aparecen luego luego en el pull request y ya te debe dejar hacer merge
